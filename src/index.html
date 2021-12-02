@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Internet Engineering Midterm Project">
+  <meta name="author" content="Amirhossein Alibakhshi">
+  <title>آقای یا خانم؟!</title>
+  <link rel="stylesheet" href="styles/main.css" media="all">
+  <link rel="stylesheet" href="styles/content.css" media="all">
+  <link rel="stylesheet" href="styles/alert.css" media="all">
+
+  <script src="https://kit.fontawesome.com/2b752132bd.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="container">
+  <div id="alert">test</div>
+  <div id="content-box">
+    <section>
+      <h2>Mr. or Ms.?</h2>
+      <form>
+        <label for="name-input">Name:</label>
+        <input
+            type="text"
+            id="name-input"
+            name="name-input"
+            onchange="checkSubmitButtonValidity()"
+            maxlength="255"
+            placeholder="Ex.: Hasan"><br>
+
+        <input type="radio" id="male-radio" name="gender-input" value="male">
+        <i class='fas fa-male'></i>
+        <label for="male-radio">Male</label><br>
+        <input type="radio" id="female-radio" name="gender-input" value="female">
+        <i class='fas fa-female'></i>
+        <label for="female-radio">Female</label><br>
+
+      </form>
+
+      <button onclick="guessGender()" id="submit-button"> submit </button>
+      <button onclick="saveGender(textareaObject.value, predictionGender.innerText)" id="save-button"> save </button>
+
+    </section>
+    <section>
+      <h2>Prediction</h2>
+      <p id="prediction-gender" onchange="updateSavedAnswersSection()">-</p>
+      <p id="prediction-probability">-</p>
+      <h2>Saved Answer</h2>
+      <p id="saved-answer">-</p>
+      <button id="clear-saved-answer" onclick="clearSavedDate(textareaObject.value)">clear</button>
+    </section>
+  </div>
+</div>
+<script src="scripts/genderDetection.js"></script>
+<script src="scripts/handlingSavedNames.js"></script>
+<script src="scripts/alert.js"></script>
+</body>
+</html>

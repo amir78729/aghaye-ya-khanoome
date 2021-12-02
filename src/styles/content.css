@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Roboto+Slab:wght@300;400;500;600&display=swap');
+
+#content-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 40px;
+    width: 60vw;
+    max-width: 500px;
+    background-color: #000000cc;
+    color: #fff;
+    border-radius: 10px;
+    animation: fade-in 0.85s;
+    position: relative;
+    box-shadow: 0 0 80px 20px #000;
+    transition: background-color 0.85s;
+}
+
+#content-box:hover {
+    background-color: #000000dd;
+}
+
+#content-box > * {
+    width: 40%;
+}
+
+button {
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+    border: 1px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    font-family: 'Roboto Slab', serif;
+    border-radius: 5px;
+    padding: 4px;
+    transition: all 0.3s;
+}
+
+button[disabled] {
+    cursor: not-allowed;
+    opacity: 0.2;
+}
+
+button:hover {
+    background-color: #ffffffdd;
+    color: #000;
+}
+
+#prediction-gender::before { content: "Gender: "; }
+#prediction-probability::before { content: "Prob.: "; }
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 0;
+        top: 30px;
+    }
+    100% {
+        opacity: 1;
+        top: 0;
+    }
+}
