@@ -13,6 +13,7 @@ body, html {
     box-sizing: border-box;
 }
 
+/* styling wrapper of the page */
 #container {
     height: 100vh;
     width: 100vw;

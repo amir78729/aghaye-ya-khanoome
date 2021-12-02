@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Roboto+Slab:wght@300;400;500;600&display=swap');
 
+/* styling the content box (middle of the page) */
 #content-box {
     display: flex;
     justify-content: space-between;
@@ -7,7 +8,7 @@
     padding: 40px;
     width: 60vw;
     max-width: 500px;
-    background-color: #000000cc;
+    background-color: #000000CC;
     color: #fff;
     border-radius: 10px;
     animation: fade-in 0.85s;
@@ -16,40 +17,85 @@
     transition: background-color 0.85s;
 }
 
+/* changing the color of content box on mouse hover */
 #content-box:hover {
-    background-color: #000000dd;
+    background-color: #000000DD;
 }
 
+h2 {
+    color: #DEB887;
+}
+
+/* coloring icons */
+.fa-male {
+    color: #6495ED;
+}
+.fa-female {
+    color: #CD5C5C;
+}
+
+/* styling textarea */
+.input-text-field {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.input-text-field label {
+    width: 35%;
+}
+.input-text-field input[type="text"] {
+    width: 65%;
+    border-radius: 5px;
+    padding: 0 5px;
+}
+
+/* setting content box column widths */
 #content-box > * {
-    width: 40%;
+    width: 50%;
+    padding: 0 15px;
 }
 
+input[type="radio"] {
+    margin-top: 17px;
+}
+
+p[id*="prediction"] {
+    height: 11px;
+}
+
+/* styling buttons */
 button {
     width: 100%;
     cursor: pointer;
     outline: none;
-    border: 1px solid #fff;
+    border: 1px solid #FFF;
     background-color: transparent;
-    color: #fff;
+    color: #FFF;
     font-family: 'Roboto Slab', serif;
     border-radius: 5px;
     padding: 4px;
     transition: all 0.3s;
 }
-
+/* styling disable buttons */
 button[disabled] {
     cursor: not-allowed;
     opacity: 0.2;
 }
-
+/* changing color of the buttons on mouse hover */
 button:hover {
-    background-color: #ffffffdd;
+    background-color: #FFFFFFDD;
     color: #000;
 }
+/* adding space between buttons */
+#save-button, #submit-button {
+    margin-top: 15px;
+}
 
+/* setting labels for "Prediction section" fields */
 #prediction-gender::before { content: "Gender: "; }
 #prediction-probability::before { content: "Prob.: "; }
 
+/* keyframes for showing content box (after the page is loaded) */
 @keyframes fade-in {
     0% {
         opacity: 0;

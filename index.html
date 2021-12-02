@@ -6,12 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Internet Engineering Midterm Project">
   <meta name="author" content="Amirhossein Alibakhshi">
-  <title>آقای یا خانم؟!</title>
-  <link rel="stylesheet" href="styles/main.css" media="all">
-  <link rel="stylesheet" href="styles/content.css" media="all">
-  <link rel="stylesheet" href="styles/alert.css" media="all">
-
+  <title>🤷‍♀️  Mr. or Ms.?  🤷‍♂️</title>
+  <link rel="stylesheet" href="src/styles/main.css" media="all">
+  <link rel="stylesheet" href="src/styles/content.css" media="all">
+  <link rel="stylesheet" href="src/styles/alert.css" media="all">
   <script src="https://kit.fontawesome.com/2b752132bd.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
 <div id="container">
@@ -20,14 +20,16 @@
     <section>
       <h2>Mr. or Ms.?</h2>
       <form>
-        <label for="name-input">Name:</label>
-        <input
-            type="text"
-            id="name-input"
-            name="name-input"
-            onchange="checkSubmitButtonValidity()"
-            maxlength="255"
-            placeholder="Ex.: Hasan"><br>
+        <div class="input-text-field">
+          <label for="name-input">Name:</label>
+          <input
+                  type="text"
+                  id="name-input"
+                  name="name-input"
+                  onchange="checkSubmitButtonValidity()"
+                  maxlength="255"
+                  placeholder="Ex.: Hasan">
+        </div>
 
         <input type="radio" id="male-radio" name="gender-input" value="male">
         <i class='fas fa-male'></i>
@@ -52,8 +54,8 @@
     </section>
   </div>
 </div>
-<script src="scripts/genderDetection.js"></script>
-<script src="scripts/handlingSavedNames.js"></script>
-<script src="scripts/alert.js"></script>
+<script src="src/scripts/genderDetection.js"></script>
+<script src="src/scripts/handlingSavedNames.js"></script>
+<script src="src/scripts/alert.js"></script>
 </body>
 </html>

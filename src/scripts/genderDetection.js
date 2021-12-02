@@ -31,7 +31,7 @@ const guessGender = () => {
                 ? `${res.gender} <i class='fas fa-${res.gender}'></i>`
                 : `unknown! <i class='fas fa-question-circle'></i>`;
             // showing probability
-            predictionProbability.innerHTML = res.probability || '<i class=\'fas fa-question-circle\'></i>';
+            predictionProbability.innerHTML = `${res.probability * 100}%` || '<i class=\'fas fa-question-circle\'></i>';
             // enabling save button if the response was valid
             saveButton.disabled = !predictionGender.innerHTML.includes('male');
             updateSavedAnswersSection();
