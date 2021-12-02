@@ -32,8 +32,10 @@ const guessGender = () => {
                 : `unknown! <i class='fas fa-question-circle'></i>`;
             // showing probability
             predictionProbability.innerHTML = `${res.probability * 100}%` || '<i class=\'fas fa-question-circle\'></i>';
+            if (res.probability === 0)
+                predictionProbability.innerHTML = `unknown! <i class='fas fa-question-circle'></i>`;
             // enabling save button if the response was valid
-            saveButton.disabled = !predictionGender.innerHTML.includes('male');
+            checkSaveButtonValidity();
             updateSavedAnswersSection();
             if (!res.gender) showAlert(`${textareaObject.value.trim()}'s gender was not found!`, 'red');
             clearButton.disabled = savedAnswer.innerHTML.includes('Not Saved!');

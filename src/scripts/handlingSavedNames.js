@@ -1,6 +1,9 @@
 const savedAnswer = document.getElementById('saved-answer');
 const saveButton = document.getElementById('save-button');
 const clearButton = document.getElementById('clear-saved-answer');
+const femaleRadioButton = document.getElementById('female-radio');
+const maleRadioButton = document.getElementById('male-radio');
+
 
 // disabling buttons initially
 saveButton.disabled = true;
@@ -18,9 +21,23 @@ const updateSavedAnswersSection = () => {
 
 /** Adding a data to the localStorage and show an alert */
 const saveGender = (name, gender) => {
-    localStorage.setItem(name, gender);
-    updateSavedAnswersSection();
-    showAlert(`${name} was saved as a ${gender} successfully!`, 'green');
+    if (gender.includes('male')) {
+        // saving server's answer to localStorage
+        localStorage.setItem(name, gender);
+        updateSavedAnswersSection();
+        showAlert(`${name} was saved as a ${gender} successfully from server's guess!`, 'green');
+    } else {
+        // saving our answer to localStorage
+        if (!(femaleRadioButton.checked || maleRadioButton.checked)) {
+            // no guess was inserted!
+            showAlert(`Please select a guess using radio buttons to continue`, 'red');
+        } else {
+            localStorage.setItem(name, femaleRadioButton.checked ? 'female' : 'male');
+            updateSavedAnswersSection();
+            showAlert(`${name} was saved as a ${gender} successfully by you!`, 'green');
+        }
+    }
+
 }
 
 /** Removing a data from localStorage and show an alert */
@@ -28,4 +45,9 @@ const clearSavedDate = name => {
     localStorage.removeItem(name);
     updateSavedAnswersSection();
     showAlert(`${name} was removed from saved items!`, 'green');
+}
+const checkSaveButtonValidity = () => {
+    saveButton.disabled = !((predictionGender.innerHTML.includes('male')
+        || femaleRadioButton.checked
+        || maleRadioButton.checked) && /^[a-zA-Z ]{1,255}$/.test(textareaObject.value));
 }

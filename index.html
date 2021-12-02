@@ -22,19 +22,19 @@
       <form>
         <div class="input-text-field">
           <label for="name-input">Name:</label>
-          <input
-                  type="text"
-                  id="name-input"
-                  name="name-input"
-                  onchange="checkSubmitButtonValidity()"
-                  maxlength="255"
-                  placeholder="Ex.: Hasan">
+          <input type="text"
+                 id="name-input"
+                 name="name-input"
+                 oninput="checkSubmitButtonValidity()"
+                 maxlength="255"
+                 placeholder="Ex.: Hasan">
         </div>
 
-        <input type="radio" id="male-radio" name="gender-input" value="male">
+        <input type="radio" id="male-radio" name="gender-input" value="male" onclick="checkSaveButtonValidity()">
         <i class='fas fa-male'></i>
         <label for="male-radio">Male</label><br>
-        <input type="radio" id="female-radio" name="gender-input" value="female">
+
+        <input type="radio" id="female-radio" name="gender-input" value="female" onclick="checkSaveButtonValidity()">
         <i class='fas fa-female'></i>
         <label for="female-radio">Female</label><br>
 
