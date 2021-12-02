@@ -37,10 +37,9 @@
         <input type="radio" id="female-radio" name="gender-input" value="female" onclick="checkSaveButtonValidity()">
         <i class='fas fa-female'></i>
         <label for="female-radio">Female</label><br>
-
+        <button onclick="guessGender()" id="submit-button"> submit </button>
       </form>
 
-      <button onclick="guessGender()" id="submit-button"> submit </button>
       <button onclick="saveGender(textareaObject.value, predictionGender.innerText)" id="save-button"> save </button>
 
     </section>
@@ -48,7 +47,7 @@
       <h2>Prediction</h2>
       <p id="prediction-gender" onchange="updateSavedAnswersSection()">-</p>
       <p id="prediction-probability">-</p>
-      <h2>Saved Answer</h2>
+      <h2 id="saved-answer-header">Saved Answer</h2>
       <p id="saved-answer">-</p>
       <button id="clear-saved-answer" onclick="clearSavedDate(textareaObject.value)">clear</button>
     </section>

@@ -11,16 +11,17 @@ clearButton.disabled = true;
 
 /** Changing "Saved Answer" part of the page */
 const updateSavedAnswersSection = () => {
-    if (localStorage.getItem(textareaObject.value)) {
-        savedAnswer.innerText = `${textareaObject.value}: ${localStorage.getItem(textareaObject.value)}`;
-    } else {
-        savedAnswer.innerText = 'Not Saved!';
-    }
+    const isInLocalStorage = localStorage.getItem(textareaObject.value);
+    setSavedAnswerSectionVisibility(isInLocalStorage);
+    savedAnswer.innerText = isInLocalStorage
+        ? `${textareaObject.value}: ${localStorage.getItem(textareaObject.value)}`
+        : 'Not Saved!';
     clearButton.disabled = savedAnswer.innerHTML.includes('Not Saved!');
 }
 
 /** Adding a data to the localStorage and show an alert */
 const saveGender = (name, gender) => {
+    guessGender();
     if (gender.includes('male')) {
         // saving server's answer to localStorage
         localStorage.setItem(name, gender);
@@ -38,16 +39,27 @@ const saveGender = (name, gender) => {
         }
     }
 
-}
+};
 
 /** Removing a data from localStorage and show an alert */
 const clearSavedDate = name => {
     localStorage.removeItem(name);
     updateSavedAnswersSection();
     showAlert(`${name} was removed from saved items!`, 'green');
-}
+};
+
+/** Checking if saving is acceptable */
 const checkSaveButtonValidity = () => {
     saveButton.disabled = !((predictionGender.innerHTML.includes('male')
         || femaleRadioButton.checked
         || maleRadioButton.checked) && /^[a-zA-Z ]{1,255}$/.test(textareaObject.value));
-}
+};
+
+/** Set the visibility of "Saved Answer" section area */
+const setSavedAnswerSectionVisibility = show => {
+    [document.getElementById('saved-answer-header'), savedAnswer, clearButton].forEach(element => {
+        element.style.visibility = show ? 'visible' : 'hidden';
+    })
+};
+
+setSavedAnswerSectionVisibility(false);

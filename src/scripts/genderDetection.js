@@ -40,6 +40,7 @@ const guessGender = () => {
             if (!res.gender) showAlert(`${textareaObject.value.trim()}'s gender was not found!`, 'red');
             clearButton.disabled = savedAnswer.innerHTML.includes('Not Saved!');
         });
+    event.preventDefault()
 
 };
 
