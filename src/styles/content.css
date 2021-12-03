@@ -60,6 +60,7 @@ h2 {
     padding: 0 15px;
 }
 
+/* setting margin for radio buttons */
 input[type="radio"] {
     margin-top: 15px;
 }
