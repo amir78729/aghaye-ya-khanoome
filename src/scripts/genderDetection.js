@@ -1,9 +1,3 @@
-const textareaObject = document.getElementById('name-input');
-const submitButton = document.getElementById('submit-button');
-const predictionGender = document.getElementById('prediction-gender');
-const predictionProbability = document.getElementById('prediction-probability');
-
-
 // disabling submit button initially
 submitButton.disabled = true;
 

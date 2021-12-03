@@ -1,10 +1,3 @@
-const savedAnswer = document.getElementById('saved-answer');
-const saveButton = document.getElementById('save-button');
-const clearButton = document.getElementById('clear-saved-answer');
-const femaleRadioButton = document.getElementById('female-radio');
-const maleRadioButton = document.getElementById('male-radio');
-
-
 // disabling buttons initially
 saveButton.disabled = true;
 clearButton.disabled = true;
@@ -22,7 +15,7 @@ const updateSavedAnswersSection = () => {
 /** Adding a data to the localStorage and show an alert */
 const saveGender = (name, gender) => {
     guessGender();
-    if (gender.includes('male')) {
+    if (gender.includes('male') && !(femaleRadioButton.checked || maleRadioButton.checked)) {
         // saving server's answer to localStorage
         localStorage.setItem(name, gender);
         updateSavedAnswersSection();
@@ -62,4 +55,5 @@ const setSavedAnswerSectionVisibility = show => {
     })
 };
 
+// hiding this section initially
 setSavedAnswerSectionVisibility(false);

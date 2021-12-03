@@ -1,3 +1,4 @@
+/* importing fonts from google font */
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Roboto+Slab:wght@300;400;500;600&display=swap');
 
 /* styling the content box (middle of the page) */
@@ -5,7 +6,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    padding: 40px;
+    padding: 20px 40px 40px;
     width: 60vw;
     max-width: 500px;
     background-color: #000000CC;

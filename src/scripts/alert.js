@@ -1,5 +1,3 @@
-const alertContainer = document.getElementById('alert');
-
 /** Showing a customized alert with message and color parameters */
 const showAlert = (message, color) => {
     alertContainer.style.backgroundColor = color;
