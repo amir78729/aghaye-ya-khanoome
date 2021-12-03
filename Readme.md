@@ -1,9 +1,14 @@
 <div style="text-align: center">
 
-# Internet Engineering Midterm Project
-
-🌐 Github Page: https://amir78729.github.io/aghaye-ya-khanoome
-
-👤 Author: [Amirhossein Alibakhshi](https://github.com/amir78729)
+# 🤷‍♀️ Mr. or Ms. ?! 🤷‍♂️
+### Internet Engineering Course Midterm Project
 
 </div>
+
+---
+
+- 🌐 GitHub Page: https://amir78729.github.io/aghaye-ya-khanoome
+
+- 📦 GitHub Repository: https://github.com/aghaye-ya-khanoome
+
+- 👤 Author: [Amirhossein Alibakhshi](https://github.com/amir78729)
