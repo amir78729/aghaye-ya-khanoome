@@ -47,7 +47,11 @@ h2 {
 .input-text-field input[type="text"] {
     width: 65%;
     border-radius: 5px;
-    padding: 0 5px;
+    padding: 0 10px;
+    font-family: 'Roboto Slab', serif;
+    height: 28px;
+    outline: none;
+    border: none;
 }
 
 /* setting content box column widths */
@@ -57,7 +61,7 @@ h2 {
 }
 
 input[type="radio"] {
-    margin-top: 17px;
+    margin-top: 15px;
 }
 
 p[id*="prediction"] {
@@ -89,7 +93,7 @@ button:hover {
 }
 /* adding space between buttons */
 #save-button, #submit-button {
-    margin-top: 15px;
+    margin-top: 13px;
 }
 
 /* setting labels for "Prediction section" fields */
